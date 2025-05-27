@@ -1,0 +1,190 @@
+{
+    "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+    "assist": {
+      "actions": {
+        "source": {
+          "organizeImports": {
+            "level": "on",
+            "options": {
+              "groups": [
+                { "source": ":NODE:", "type": true },
+                { "source": ":BUN:", "type": true },
+                { "source": ":PACKAGE:", "type": true },
+                { "source": ":PACKAGE_WITH_PROTOCOL:", "type": true },
+                ":BLANK_LINE:",
+                { "source": ":NODE:", "type": false },
+                { "source": ":BUN:", "type": false },
+                { "source": ":PACKAGE:", "type": false },
+                { "source": ":PACKAGE_WITH_PROTOCOL:", "type": false },
+                ":BLANK_LINE:",
+                { "source": ":ALIAS:", "type": true },
+                { "source": ":PATH:", "type": true },
+                { "source": ":URL:", "type": true },
+                ":BLANK_LINE:",
+                { "source": ":ALIAS:", "type": false },
+                { "source": ":PATH:", "type": false },
+                { "source": ":URL:", "type": false }
+              ]
+            }
+          },
+          "useSortedAttributes": "on",
+          "useSortedKeys": "on"
+        }
+      },
+      "enabled": false
+    },
+    "files": {
+      "ignoreUnknown": false,
+      "includes": ["**", "!**/node_modules/**", "!**/dist/**"]
+    },
+    "formatter": {
+      "enabled": true,
+      "formatWithErrors": false,
+      "indentStyle": "space",
+      "lineWidth": 225,
+      "useEditorconfig": true
+    },
+    "html": {
+      "formatter": {
+        "enabled": true,
+        "indentScriptAndStyle": true,
+        "selfCloseVoidElements": "always"
+      }
+    },
+    "javascript": {
+      "assist": {
+        "enabled": true
+      },
+      "formatter": {
+        "arrowParentheses": "asNeeded",
+        "bracketSameLine": true
+      },
+      "parser": {
+        "unsafeParameterDecoratorsEnabled": true
+      }
+    },
+    "json": {
+      "formatter": {
+        "indentStyle": "space",
+        "trailingCommas": "none"
+      },
+      "parser": {
+        "allowComments": true
+      }
+    },
+    "linter": {
+      "enabled": true,
+      "rules": {
+        "a11y": { "noAutofocus": "off" },
+        "complexity": {
+          "noBannedTypes": "off",
+          "noForEach": "error",
+          "noStaticOnlyClass": "off",
+          "noUselessStringConcat": "error",
+          "useArrowFunction": "off",
+          "useOptionalChain": "error",
+          "useSimplifiedLogicExpression": "error",
+          "useWhile": "error"
+        },
+        "correctness": {
+          "noNodejsModules": "off",
+          "useHookAtTopLevel": "error",
+          "useJsxKeyInIterable": "error"
+        },
+        "nursery": {
+          "noDestructuredProps": "error",
+          "noGlobalDirnameFilename": "error",
+          "noImportCycles": "info",
+          "noProcessGlobal": "error",
+          "noTsIgnore": "error",
+          "noUselessEscapeInString": "error",
+          "noUselessUndefined": "error",
+          "useAdjacentGetterSetter": "error",
+          "useConsistentObjectDefinition": {
+            "level": "error",
+            "options": { "syntax": "shorthand" }
+          },
+          "useExhaustiveSwitchCases": "error",
+          "useNumericSeparators": "error",
+          "useParseIntRadix": "error",
+          "useSortedClasses": {
+            "fix": "safe",
+            "level": "error",
+            "options": {
+              "attributes": ["classList"],
+              "functions": ["clsx", "cva", "tw", "tw.*"]
+            }
+          }
+        },
+        "performance": {
+          "noAccumulatingSpread": "error",
+          "noDelete": "error",
+          "noReExportAll": "error",
+          "useTopLevelRegex": "error"
+        },
+        "recommended": true,
+        "style": {
+          "noCommaOperator": "off",
+          "noCommonJs": "error",
+          "noExportedImports": "error",
+          "noNonNullAssertion": "off",
+          "noSubstr": "error",
+          "useAtIndex": "error",
+          "useCollapsedElseIf": "error",
+          "useCollapsedIf": "error",
+          "useConsistentArrayType": {
+            "level": "error",
+            "options": {
+              "syntax": "shorthand"
+            }
+          },
+          "useConsistentBuiltinInstantiation": "error",
+          "useConsistentCurlyBraces": "error",
+          "useConsistentMemberAccessibility": {
+            "level": "error",
+            "options": {
+              "accessibility": "noPublic"
+            }
+          },
+          "useDefaultParameterLast": "error",
+          "useExplicitLengthCheck": "error",
+          "useForOf": "error",
+          "useImportType": {
+            "level": "error",
+            "options": {
+              "style": "inlineType"
+            }
+          },
+          "useNumberNamespace": "error",
+          "useShorthandAssign": "error",
+          "useTemplate": "error",
+          "useThrowNewError": "error",
+          "useThrowOnlyError": "error",
+          "useTrimStartEnd": "error"
+        },
+        "suspicious": {
+          "noAssignInExpressions": "off",
+          "noConfusingVoidType": "off",
+          "noExplicitAny": "off",
+          "noReactSpecificProps": "off",
+          "useAwait": "error",
+          "useErrorMessage": "error",
+          "useGuardForIn": "error",
+          "useNumberToFixedDigitsArgument": "error"
+        }
+      }
+    },
+    "overrides": [
+      {
+        "formatter": { "lineWidth": 100 },
+        "includes": ["**/*.md"]
+      }
+    ],
+    "vcs": {
+      "clientKind": "git",
+      "defaultBranch": "main",
+      "enabled": true,
+      "useIgnoreFile": true
+    }
+  }
+  
